@@ -939,7 +939,7 @@ function BBP.GetUnitReaction(unit)
         return true, false, false  -- Unit is an enemy because it's attackable
     end
 
-]]
+--]]
 
 
     local reaction = UnitReaction("player", unit)
@@ -1486,7 +1486,7 @@ hooksecurefunc(NamePlateDriverFrame.pools:GetPool("NamePlateUnitFrameTemplate"),
 --hooksecurefunc(NamePlateDriverFrame.pools:GetPool("ForbiddenNamePlateUnitFrameTemplate"),"resetterFunc",BBP.ClickthroughNameplateAuras)
 
 --#################################################################################################
--- Class color and scale names 
+-- Class color and scale names
 function BBP.ClassColorAndScaleNames(frame)
     local isPlayer = UnitIsPlayer(frame.unit)
     local isEnemy, isFriend, isNeutral = BBP.GetUnitReaction(frame.unit)
@@ -2223,7 +2223,7 @@ function BBP.AuraColor(frame)
     local highestPriority = 0
     local auraColor = nil
 
-    local function ProcessAura(name, icon, count, dispelType, duration, expirationTime, source, isStealable, 
+    local function ProcessAura(name, icon, count, dispelType, duration, expirationTime, source, isStealable,
                                nameplateShowPersonal, spellId, canApplyAura, isBossDebuff, castByPlayer, nameplateShowAll, timeMod)
         local spellInfo = BBP.spellIdLookup[spellId] or BBP.auraNameLookup[strlower(name)]
         if spellInfo and spellInfo.priority > highestPriority then
@@ -3992,7 +3992,7 @@ local function NamePlateCastBarTestMode(frame)
                         frame.dummyTimer:SetTextColor(1, 1, 1)
                         frame.dummyTimer:SetText("1.5")
                     end
-                    BBP.SetFontBasedOnOption(frame.dummyTimer, 12, "OUTLINE")
+                    BBP.SetFontBasedOnOption(frame.dummyTimer, 12)
                     frame.dummyTimer:Show()
                 else
                     if frame.dummyTimer then

@@ -198,7 +198,7 @@ function BBP.CustomizeCastbar(unitToken)
         end
     end
 
-    BBP.SetFontBasedOnOption(castBar.Text, 12, "OUTLINE")
+    BBP.SetFontBasedOnOption(castBar.Text, 12)
 
     if hideCastbarText then
         local text = castBar.Text:GetText()
@@ -570,7 +570,7 @@ function BBP.UpdateCastTimer(nameplate, unitID)
         nameplate.CastTimer = nameplate.CastTimerFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
         --nameplate.CastTimer:SetPoint("LEFT", nameplate, "BOTTOMRIGHT", -10, 15)
         nameplate.CastTimer:SetPoint("LEFT", nameplate.UnitFrame.castBar, "RIGHT", 5, 0)
-        BBP.SetFontBasedOnOption(nameplate.CastTimer, 12, "OUTLINE")
+        BBP.SetFontBasedOnOption(nameplate.CastTimer, 12)
         nameplate.CastTimer:SetTextColor(1, 1, 1)
     end
 
