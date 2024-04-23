@@ -3974,6 +3974,7 @@ local function NamePlateCastBarTestMode(frame)
                 local castBarRecolor = BetterBlizzPlatesDB.castBarRecolor
                 local castBarTimer = BetterBlizzPlatesDB.showNameplateCastbarTimer
                 local targetText = BetterBlizzPlatesDB.showNameplateTargetText
+                local castBarTextScale = BetterBlizzPlatesDB.castBarTextScale
 
 
                 castBar.Icon:SetScale(castBarIconScale)
@@ -3993,6 +3994,7 @@ local function NamePlateCastBarTestMode(frame)
                         frame.dummyTimer:SetText("1.5")
                     end
                     BBP.SetFontBasedOnOption(frame.dummyTimer, 12)
+                    frame.dummyTimer:SetScale(castBarTextScale)
                     frame.dummyTimer:Show()
                 else
                     if frame.dummyTimer then
@@ -4019,6 +4021,7 @@ local function NamePlateCastBarTestMode(frame)
 
                     local useCustomFont = BetterBlizzPlatesDB.useCustomFont
                     BBP.SetFontBasedOnOption(frame.dummyNameText, useCustomFont and 11 or 12)
+                    frame.dummyNameText:SetScale(castBarTextScale)
                     frame.dummyNameText:Show()
                 else
                     if frame.dummyNameText then

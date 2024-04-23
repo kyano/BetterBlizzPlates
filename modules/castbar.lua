@@ -547,6 +547,7 @@ function BBP.UpdateNameplateTargetText(nameplate, unitID)
         local _, class = UnitClass(targetOfTarget)
         local color = RAID_CLASS_COLORS[class]
         local useCustomFont = BetterBlizzPlatesDB.useCustomFont
+        local castBarTextScale = BetterBlizzPlatesDB.castBarTextScale
 
         nameplate.TargetText:SetText(name)
         nameplate.TargetText:SetTextColor(color.r, color.g, color.b)
@@ -556,6 +557,7 @@ function BBP.UpdateNameplateTargetText(nameplate, unitID)
             nameplate.TargetText:SetPoint("CENTER", nameplate, "BOTTOM", 0, 0)  -- Set anchor point for friendly
         end
         BBP.SetFontBasedOnOption(nameplate.TargetText, useCustomFont and 11 or 12)
+        nameplate.TargetText:SetScale(castBarTextScale)
     else
         nameplate.TargetText:SetText("")
     end
@@ -581,6 +583,7 @@ function BBP.UpdateCastTimer(nameplate, unitID)
 
     if name and endTime and startTime and nameplate.UnitFrame and nameplate.UnitFrame.healthBar:IsShown() and not nameplate.UnitFrame.hideCastInfo then
         local enableCastbarCustomization = BetterBlizzPlatesDB.enableCastbarCustomization
+        local castBarTextScale = BetterBlizzPlatesDB.castBarTextScale
 
         if enableCastbarCustomization then
             BBP.CustomizeCastbar(unitID)
@@ -595,8 +598,9 @@ function BBP.UpdateCastTimer(nameplate, unitID)
             end
         else
             nameplate.CastTimer:SetText(string.format("%.1f", timeLeft))
-            C_Timer.After(0.05, function() 
-                BBP.UpdateCastTimer(nameplate, unitID) 
+            nameplate.CastTimer:SetScale(castBarTextScale)
+            C_Timer.After(0.05, function()
+                BBP.UpdateCastTimer(nameplate, unitID)
                 --BBP.HideCastbar(unitID) -- this worked well but could pop up short between casts
             end)
         end
