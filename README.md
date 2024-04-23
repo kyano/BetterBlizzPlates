@@ -1,3 +1,10 @@
+# 의빈언니의 BetterBlizzPlates
+This is my opinionated modified version of `BetterBlizzPlates`.
+
+You can check the changes by me via [this link](https://github.com/Bodify/BetterBlizzPlates/compare/main...kyano:BetterBlizzPlates:euivin).
+
+-------------------------------------------------------------------------------
+
 # BetterBlizzPlates
 **BetterBlizzPlates** is a lightweight addon that enhances the default Blizzard nameplates.
 
@@ -95,4 +102,4 @@ To open the options panel, type `/bbp`
 
 ![BetterBlizzPlates FadeOut](https://i.imgur.com/0Spxwpn.png)
 
-This is very much a work in progress, and I would appreciate all feedback.- 
+This is very much a work in progress, and I would appreciate all feedback.-
