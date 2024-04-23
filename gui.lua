@@ -1039,7 +1039,7 @@ local function CreateSlider(parent, label, minValue, maxValue, stepValue, elemen
                     if not BBP.checkCombatAndWarn() then
                     local defaultMinScale = 0.8
                     local defaultMaxScale = 1.0
-                    local ratio = defaultMinScale / defaultMaxScale
+                    local ratio = defaultMaxScale / defaultMinScale
                     -- Keep ratio between default values
                     local newMinScale = value
                     local newMaxScale = newMinScale * ratio
@@ -1321,7 +1321,7 @@ local function CreateImportExportUI(parent, title, dataTable, posX, posY, tableN
     local frame = CreateFrame("Frame", nil, parent, "BackdropTemplate")
     frame:SetSize(210, 65) -- Adjust size as needed
     frame:SetPoint("TOPLEFT", parent, "TOPLEFT", posX, posY)
-    
+
     -- Setting the backdrop
     frame:SetBackdrop({
         bgFile = "Interface\\ChatFrame\\ChatFrameBackground", -- More subtle background
@@ -3579,7 +3579,7 @@ local function guiGeneralTab()
         "Select Font",
         "customFont",
         function(arg1)
-            BBP.RefreshAllNameplates() 
+            BBP.RefreshAllNameplates()
         end,
         { anchorFrame = useCustomFont, x = 5, y = -21, label = "Font" }
     )
@@ -4011,7 +4011,7 @@ local function guiPositionAndScale()
         contentFrame,
         "Select Anchor Point",
         "combatIndicatorAnchor",
-        function(arg1) 
+        function(arg1)
             BBP.RefreshAllNameplates()
         end,
         { anchorFrame = combatIndicatorYPos, x = -16, y = -35, label = "Anchor" }
@@ -4878,7 +4878,7 @@ local function guiPositionAndScale()
         contentFrame,
         "Select Anchor Point",
         "partyPointerAnchor",
-        function(arg1) 
+        function(arg1)
             BBP.RefreshAllNameplates()
         end,
         { anchorFrame = partyPointerYPos, x = -16, y = -35, label = "Anchor" }
