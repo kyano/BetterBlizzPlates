@@ -1037,16 +1037,10 @@ local function CreateSlider(parent, label, minValue, maxValue, stepValue, elemen
                     -- Nameplate scales
                 elseif element == "nameplateMinScale" then
                     if not BBP.checkCombatAndWarn() then
-                    local defaultMinScale = 0.8
-                    local defaultMaxScale = 1.0
-                    local ratio = defaultMaxScale / defaultMinScale
-                    -- Keep ratio between default values
-                    local newMinScale = value
-                    local newMaxScale = newMinScale * ratio
-                    SetCVar("nameplateMinScale", newMinScale)
-                    SetCVar("nameplateMaxScale", newMaxScale)
-                    BetterBlizzPlatesDB.nameplateMinScale = newMinScale
-                    BetterBlizzPlatesDB.nameplateMaxScale = newMaxScale
+                    SetCVar("nameplateMinScale", value)
+                    SetCVar("nameplateMaxScale", value)
+                    BetterBlizzPlatesDB.nameplateMinScale = value
+                    BetterBlizzPlatesDB.nameplateMaxScale = value
                     end
                 -- Nameplate selected scale
                 elseif element == "nameplateSelectedScale" then
