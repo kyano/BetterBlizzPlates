@@ -108,9 +108,10 @@ function BBP.HealthNumbers(frame)
     -- Initialize or update the health numbers display
     if not frame.healthNumbers then
         frame.healthNumbers = frame.healthBar:CreateFontString(nil, "OVERLAY")
-        BBP.SetFontBasedOnOption(frame.healthNumbers, 9, "THICKOUTLINE")
+        BBP.SetFontBasedOnOption(frame.healthNumbers, 9)
         frame.healthNumbers:SetTextColor(1, 1, 1)
         frame.healthNumbers:SetJustifyH("CENTER")
+        frame.healthNumbers:SetShadowOffset(1, -1)
     end
 
     frame.healthNumbers:ClearAllPoints()
